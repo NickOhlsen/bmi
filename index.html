@@ -2,18 +2,94 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>BMI Calculator</title>
+  <title>Angular Bootstrap Demo</title>
   <base href="./">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+<link rel="stylesheet" href="./style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
   </head>
-<body>
-  <app>Loading...</app>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="main.bundle.js"></script></body>
+<body ng-app="myApp">
+
+<!--<body ng-app="myApp">-->
+<div class="container">
+  <div class="jumbotron">
+    <h1>{{header}}</h1>
+    <h2>BMI Calculator with Metric</h2>
+  </div>
+  <div class="tab-controller-wrap" ng-controller="tabCtrl" ng-click="tabChange($event)">
+      <a href="#awesome1" class="tab-control" ng-class="{'active':tabSelected=='#awesome1'}">Imperial</a>
+      <a href="#awesome2" class="tab-control" ng-class="{'active':tabSelected=='#awesome2'}">Metric</a>
+      <a href="#awesome3" class="tab-control" ng-class="{'active':tabSelected=='#awesome3'}">BMI Classification</a>
+      <hr>
+	  <div class="content-wrapper">
+      <!-- Imperial Calculator -->
+        <div id="awesome1" class="ng-hide" ng-show="tabSelected=='#awesome1'">
+          <form ng-controller="imperialCtrl">
+           <h5>Weight:</h5><input ng-change="computeBMI()" ng-model="statsUS.weightUS"/><span> lbs.</span>
+            <br>
+            <br>
+            <h5>Height:</h5><input class="input-small" ng-change="computeBmiUS()" ng-model="statsUS.ftUS"/><span> ft.</span>
+            <input class="input-small" ng-change="computeBmiUS()" ng-model="statsUS.inUS"/><span> in.</span>
+            <br>
+            <br>
+            <b>Your BMI is:</b>
+            <h3 class="result">{{statsUS.bmiUS | number: 0}}</h3>
+            <br>
+          </form>
+        </div>
+		
+		<!-- Metric Calculator -->
+        <div id="awesome2" class="ng-hide" ng-show="tabSelected=='#awesome2'">
+          <form ng-controller="metricCtrl">
+            <h5>Weight:</h5><input ng-change="computeBmiM()" ng-model="statsM.weightKG"/><span> kg.</span>
+            <br>
+            <br>
+            <h5>Height:</h5><input class="input-small" ng-change="computeBmiM()" ng-model="statsM.heightCM"/><span> cm.</span>
+            <br>
+            <br>
+            <b>Your BMI is:</b>
+            <h3 class="result">{{statsM.bmiM | number: 0}}</h3>
+            <br>
+          </form>
+        </div>
+		
+          <div id="awesome3" class="ng-hide" ng-show="tabSelected=='#awesome3'">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <h3>BMI</h3>
+              <hr>
+                <p>18.5</p>
+                <p>18.5–24.9</p>
+                <p>25.0–29.9</p>
+                <p>30.0–34.9</p>
+                <p>35.0–39.9</p>
+                <p>≥ 40.0</p>
+            </div>
+            <div class="chart col-xs-12 col-sm-6">
+              <h3>Classification</h3>
+              <hr>
+                <p>Uderweight</p>
+                <p>Normal Weight</p>
+                <p>Overweight</p>
+                <p>Class I Obesity</p>
+                <p>Class II Obesity</p>
+                <p>Class III Obesity </p>
+            </div>
+          
+          </div>
+        </div>
+		</div>
+		
+		<!--<script type="text/javascript" src="main.bundle.js"></script></body>-->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.bundle.js"></script>
+  <script src="app.component.js"></script>
+  </body>
 </html>
