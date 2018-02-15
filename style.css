@@ -25,7 +25,7 @@ body {
 
 .tab-control {
   padding: 10px 20px;
-  background-color: #12A5F4;
+  background-color: #87CEFA;
 }
 
 .tab-control:hover{
@@ -33,7 +33,7 @@ body {
 }
 
 .tab-control.active{
-  background-color: #0a6392;
+  background-color: #000080;
 }
 
 hr{
@@ -66,27 +66,27 @@ p {
 }
 
 p:nth-child(3){
-  background-color: $yellow;
+  background-color: #FFFF00;
 }
 
 p:nth-child(4){
-  background-color: $green;
+  background-color: #7fff7f;
 }
 
 p:nth-child(5){
-  background-color: $orange;
+  background-color: #ffa366;
 }
 
 p:nth-child(6){
-  background-color: $red-I;
+  background-color: #ff7f7f;
 }
 
 p:nth-child(7){
-  background-color: $red-II;
+  background-color: #ff6666;
 }
 
 p:nth-child(8){
-  background-color: $red-III;
+  background-color: #ff4c4c;
 }
 
 
