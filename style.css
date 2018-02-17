@@ -55,13 +55,14 @@ h5{
   margin-right: 20px;
 }
 
+.input-small{
+  width: 4%;
+}
+
 .input-weight{
 	width: 10%;
 }
 
-.input-small{
-  width: 4%;
-}
 
 //Classification Chart
 
