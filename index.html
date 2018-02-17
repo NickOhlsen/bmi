@@ -30,7 +30,7 @@
       <!-- Imperial Calculator -->
         <div id="awesome1" class="ng-hide" ng-show="tabSelected=='#awesome1'">
           <form ng-controller="imperialCtrl">
-           <h5>Weight:</h5><input class="input-weight" ng-change="computeBMI()" ng-model="statsUS.weightUS"/><span> lbs.</span>
+           <h5>Weight:</h5><input style="width: 10%;" ng-change="computeBMI()" ng-model="statsUS.weightUS"/><span> lbs.</span>
             <br>
             <br>
             <h5>Height:&nbsp;</h5><input class="input-small" ng-change="computeBmiUS()" ng-model="statsUS.ftUS"/><span> ft.</span>
@@ -46,7 +46,7 @@
 		<!-- Metric Calculator -->
         <div id="awesome2" class="ng-hide" ng-show="tabSelected=='#awesome2'">
           <form ng-controller="metricCtrl">
-            <h5>Weight:</h5><input class="input-weight" ng-change="computeBmiM()" ng-model="statsM.weightKG"/><span> kg.</span>
+            <h5>Weight:</h5><input style="width: 10%;" ng-change="computeBmiM()" ng-model="statsM.weightKG"/><span> kg.</span>
             <br>
             <br>
             <h5>Height:&nbsp;</h5><input class="input-small" ng-change="computeBmiM()" ng-model="statsM.heightCM"/><span> cm.</span>
